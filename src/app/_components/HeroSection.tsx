@@ -50,7 +50,7 @@ export default function HeroSection() {
           
           <h1 className={`text-4xl md:text-6xl lg:text-7xl font-heading font-bold tracking-tight transition-all duration-700 ${animateElements ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '400ms' }}>
             Hi, I&apos;m <span className="relative inline-block">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400">Sudha</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400">Sudha Chandran</span>
               <span className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-purple-600 via-pink-500 to-rose-500 rounded-full"></span>
             </span>
             <br />
