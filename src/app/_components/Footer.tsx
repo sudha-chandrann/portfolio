@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between space-y-4 md:space-y-0 md:flex-row">
           <div className="text-center md:text-left">
             <a href="#home" className="text-xl font-heading font-bold text-gradient">
-              Dev<span className="text-secondary">Folio</span>
+            Sudha<span className="text-secondary">.dev </span>
             </a>
             <p className="text-sm text-muted-foreground mt-1">
               &copy; {new Date().getFullYear()} All rights reserved
@@ -18,7 +18,7 @@ export default function Footer() {
 
           <div className="flex space-x-4">
             <Link
-              href="https://github.com"
+              href="https://github.com/sudha-chandrann"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full hover:bg-muted transition-colors"
@@ -27,7 +27,7 @@ export default function Footer() {
               <Github className="h-5 w-5" />
             </Link>
             <Link
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/sudha-chandran-8b439228a/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full hover:bg-muted transition-colors"
@@ -36,7 +36,7 @@ export default function Footer() {
               <Linkedin className="h-5 w-5" />
             </Link>
             <Link
-              href="mailto:contact@example.com"
+              href="mailto:sudhachandran601@gmail.com"
               className="p-2 rounded-full hover:bg-muted transition-colors"
               aria-label="Email"
             >

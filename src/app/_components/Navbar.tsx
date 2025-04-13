@@ -72,7 +72,7 @@ export default function Navbar() {
           href="#home" 
           className="text-xl font-heading font-bold relative z-50 text-gradient"
         >
-          Sudha<span className="text-secondary">Folio</span>
+          Sudha<span className="text-secondary">.dev </span>
         </a>
 
         {/* Desktop Menu */}

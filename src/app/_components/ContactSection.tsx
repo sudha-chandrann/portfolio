@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, Github, Linkedin } from "lucide-react";
-// import { useToast } from "@/hooks/use-toast";
+import { useToast } from "@/hooks/use-toast"
+import axios from "axios";
 
 interface ContactInfo {
   icon: React.ElementType;
@@ -36,13 +37,13 @@ const contactInfo: ContactInfo[] = [
   {
     icon: Linkedin,
     title: "LinkedIn",
-    value: "https://www.linkedin.com/in/sudha-chandran-8b439228a/",
+    value: "linkedin.com/in/sudha-chandran-8b439228a",
     href: "https://www.linkedin.com/in/sudha-chandran-8b439228a/",
   },
 ];
 
 export default function ContactSection() {
-//   const { toast } = useToast();
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -58,27 +59,36 @@ export default function ContactSection() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      
-    //   toast({
-    //     title: "Message Sent",
-    //     description: "Thank you for your message. I'll get back to you soon!",
-    //   });
-      
-      // Reset form
+    try {
+      // Send email using the SendMail function
+      const response= await axios.post('/api/contact',formData);
+      if(response.data.success){
+        toast({
+          title: "Message Sent",
+          description: "Thank you for your message. I'll get back to you soon!",
+          variant: "default",
+        });
+      }
       setFormData({
         name: "",
         email: "",
         subject: "",
         message: "",
       });
-    }, 1500);
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+      console.error("Contact form error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
