@@ -7,6 +7,7 @@ import AboutSection from "./_components/AboutCard";
 import ProjectsSection from "./_components/ProjectsSection";
 import ContactSection from "./_components/ContactSection";
 import Footer from "./_components/Footer";
+import SkillSection from "./_components/SkillSection";
 
 
 const Index = () => {
@@ -55,7 +56,7 @@ const Index = () => {
       <main className="mx-auto">
         <HeroSection />
         <AboutSection />
-        {/* <SkillsSection /> */}
+        <SkillSection/>
         <ProjectsSection />
         <ContactSection />
       </main>
